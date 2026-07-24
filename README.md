@@ -4,9 +4,9 @@ Sistema de Gerenciamento de PetShop e Clinicas Veterinarias: O PetCare API é um
 # Estruturas de Pacotes
 com.petcare.api
 - controller/            `Endpoints REST e anotações @RestController`
-- service/               Classes @Service com regras de negócio
-- repository/            Interfaces Spring Data JPA
-- model/                 Entidades JPA do domínio (@Entity)
-- model/enums/           Enums (Especie, TipoServico, StatusAgendamento)
-- dto/                   Request e Response DTOs
-- exception/             Manipulador global (@RestControllerAdvice) e exceções customizadas
+- service/               `Classes @Service com regras de negócio`
+- repository/            `Interfaces Spring Data JPA`
+- model/                 `Entidades JPA do domínio (@Entity)`
+- model/enums/           `Enums (Especie, TipoServico, StatusAgendamento)`
+- dto/                   `Request e Response DTOs`
+- exception/             `Manipulador global (@RestControllerAdvice) e exceções customizadas`
