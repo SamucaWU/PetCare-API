@@ -6,7 +6,7 @@ Sistema de Gerenciamento de PetShop e Clinicas Veterinarias: O PetCare API é um
 O projeto adota a Arquitetura em 3 Camadas (3-Tier), promovendo baixo acoplamento, alta coesão e facilidade de manutenção e testabilidade:
 
 
-    [ Cliente / Frontend ]
+### [ Cliente / Frontend ]
           `│ (HTTP REST / JSON)`
           `▼`
 
