@@ -7,8 +7,8 @@ O projeto adota a Arquitetura em 3 Camadas (3-Tier), promovendo baixo acoplament
 
 
 ### [ Cliente / Frontend ]
-          `│ (HTTP REST / JSON)`
-          `▼`
+          │ (HTTP REST / JSON)
+          ▼
 
 1. Presentation Layer (Controller)      ➔ Expõe Endpoints e valida entradas (@Valid)
 
