@@ -1,4 +1,4 @@
-package com.petshop.model;
+package com.petshop.apipetshop.model;
 
 public enum Especie {
     CACHORRO,

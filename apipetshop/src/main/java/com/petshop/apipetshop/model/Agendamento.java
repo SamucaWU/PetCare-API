@@ -1,4 +1,4 @@
-package com.petshop.model;
+package com.petshop.apipetshop.model;
 
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
