@@ -28,7 +28,7 @@ public class TutorController {
     public TutorController(TutorService tutorService) {
         this.tutorService = tutorService;
     }
-
+    
     @PostMapping
     public ResponseEntity<TutorResponseDTO> cadastrar(@RequestBody @Valid TutorRequestDTO dto) {
         TutorResponseDTO tutorResponse = tutorService.cadastrar(dto);
@@ -41,7 +41,7 @@ public class TutorController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<TutorResponseDTO> buscarPorId(Long id) {
+    public ResponseEntity<TutorResponseDTO> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(tutorService.buscarPorId(id));
     }
 
