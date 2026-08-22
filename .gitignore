@@ -1,3 +1,17 @@
+.env
+
+# Maven build output
+apipetshop/target/
+
+# IDE and local tooling
+.idea/
+.vscode/
+*.iml
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
 DESCRICAO_DO_SISTEMA.txt
 Postman_Json.txt
 REQUISITOS_E_CASOS_DE_USO.txt
