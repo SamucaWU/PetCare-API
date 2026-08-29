@@ -1,4 +1,4 @@
-package com.petshop.apipetshop.DTO;
+package com.petshop.apipetshop.DTO.tutorDTO;
 
 import com.petshop.apipetshop.model.Tutor;
 

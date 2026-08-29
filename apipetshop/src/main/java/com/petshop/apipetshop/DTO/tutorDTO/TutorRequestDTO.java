@@ -1,7 +1,7 @@
-package com.petshop.apipetshop.DTO;
+package com.petshop.apipetshop.DTO.tutorDTO;
 
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public record TutorRequestDTO(
