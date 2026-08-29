@@ -9,7 +9,7 @@ import com.petshop.apipetshop.model.Pet;
 
 @Repository
 public interface PetRepository extends JpaRepository<Pet, Long> {
-    List<Pet> findByContaining(String nome);// buscar por nome do pet
+    List<Pet> findByNomeContaining(String nome);// buscar por nome do pet
     List<Pet> findByTutorId(Long tutorId); // buscar por tutorId
     List<Pet> findByEspecie(String especie); // buscar por especie do pet
 }
