@@ -10,4 +10,10 @@ public class PetService {
         this.petRepository = petRepository;
     }
     
+    //cadastrar
+    //buscar
+    //buscarId
+    //atualizar
+    //deletar
+    
 }
