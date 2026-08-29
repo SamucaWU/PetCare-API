@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.petshop.apipetshop.DTO.TutorRequestDTO;
-import com.petshop.apipetshop.DTO.TutorResponseDTO;
+import com.petshop.apipetshop.DTO.tutorDTO.TutorRequestDTO;
+import com.petshop.apipetshop.DTO.tutorDTO.TutorResponseDTO;
 import com.petshop.apipetshop.exception.RegraNegocioException;
 import com.petshop.apipetshop.model.Tutor;
 import com.petshop.apipetshop.repository.TutorRepository;
