@@ -78,6 +78,23 @@ public class PetService {
     }
     
     //atualizar
+    @Transactional
+    public PetResponseDTO atualizarPet(Long id, PetRequestDTO dto) {
+        Pet pet = petRepository.findById(id)
+                .orElseThrow(() -> new RegraNegocioException("Pet não encontrado com o ID: " + id));
+
+        Tutor tutor = tutorRepository.findById(dto.tutorId())
+                .orElseThrow(() -> new RegraNegocioException("Tutor não encontrado com o ID: " + dto.tutorId()));
+
+        pet.setNome(dto.nome());
+        pet.setEspecie(dto.especie());
+        pet.setIdadeMeses(dto.idadeMeses());
+        pet.setTutor(tutor);
+
+        Pet atualizado = petRepository.save(pet);
+        return PetResponseDTO.fromEntity(atualizado);
+    }
+
     //deletar
 
 }
