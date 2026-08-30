@@ -5,7 +5,7 @@ import com.petshop.apipetshop.model.Especie;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record petRequestDTO (
+public record PetRequestDTO (
 
     @NotBlank(message = "O campo nome é obrigatório")
     String nome,

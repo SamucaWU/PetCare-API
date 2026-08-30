@@ -3,15 +3,15 @@ package com.petshop.apipetshop.DTO.petDTO;
 import com.petshop.apipetshop.model.Especie;
 import com.petshop.apipetshop.model.Pet;
 
-public record petResponseDTO (
+public record PetResponseDTO (
     Long id,
     String nome,
     Especie especie,
     Integer idadeMeses,
     Long tutorId
 ){
-    public petResponseDTO(Pet pet) {
-        this(
+    public static PetResponseDTO fromEntity(Pet pet) {
+        return new PetResponseDTO(
             pet.getId(),
             pet.getNome(),
             pet.getEspecie(),

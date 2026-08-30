@@ -1,10 +1,12 @@
 package com.petshop.apipetshop.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.petshop.apipetshop.DTO.petDTO.petRequestDTO;
-import com.petshop.apipetshop.DTO.petDTO.petResponseDTO;
+import com.petshop.apipetshop.DTO.petDTO.PetRequestDTO;
+import com.petshop.apipetshop.DTO.petDTO.PetResponseDTO;
 import com.petshop.apipetshop.exception.RegraNegocioException;
 import com.petshop.apipetshop.model.Pet;
 import com.petshop.apipetshop.model.Tutor;
@@ -24,7 +26,7 @@ public class PetService {
 
     //Cadastro
     @Transactional
-    public petResponseDTO cadastrarPet(petRequestDTO dto) {
+    public PetResponseDTO cadastrarPet(PetRequestDTO dto) {
         // Busca tutor
         Tutor tutor = tutorRepository.findById(dto.tutorId())
             .orElseThrow(() -> new RegraNegocioException("Tutor não encontrado com o ID: " + dto.tutorId()));
@@ -37,10 +39,17 @@ public class PetService {
         pet.setTutor(tutor);
 
         Pet salvo = petRepository.save(pet);
-        return new petResponseDTO(salvo);
+        return PetResponseDTO.fromEntity(salvo);
     }
 
     //buscar
+    @Transactional
+    public List<PetResponseDTO> listarTodos() {
+        return petRepository.findAll()
+                .stream()
+                .map(PetResponseDTO::fromEntity)
+                .toList();
+    }
     //buscarId
     //atualizar
     //deletar
