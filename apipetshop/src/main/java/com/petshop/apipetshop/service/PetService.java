@@ -50,7 +50,14 @@ public class PetService {
                 .map(PetResponseDTO::fromEntity)
                 .toList();
     }
+
     //buscarId
+    @Transactional(readOnly = true)
+    public PetResponseDTO buscarPorId(Long id) {
+        Pet pet = petRepository.findById(id)
+                .orElseThrow(() -> new RegraNegocioException("Pet não encontrado com o ID: " + id));
+        return PetResponseDTO.fromEntity(pet);
+    }
     //atualizar
     //deletar
 
