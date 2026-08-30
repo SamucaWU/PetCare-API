@@ -96,5 +96,11 @@ public class PetService {
     }
 
     //deletar
+    public void deletarPet(Long id) {
+        if(!petRepository.existsById(id)) {
+            throw new RegraNegocioException("Pet não encontrado com o ID: " + id);
+        }
+        petRepository.deleteById(id);
+    }
 
 }
