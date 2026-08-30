@@ -42,7 +42,7 @@ public class PetService {
         return PetResponseDTO.fromEntity(salvo);
     }
 
-    //buscar
+    //buscar todos os pets
     @Transactional
     public List<PetResponseDTO> listarTodos() {
         return petRepository.findAll()
@@ -51,13 +51,23 @@ public class PetService {
                 .toList();
     }
 
-    //buscarId
+    //buscar por id o pet ou lançar exceção
     @Transactional(readOnly = true)
     public PetResponseDTO buscarPorId(Long id) {
         Pet pet = petRepository.findById(id)
                 .orElseThrow(() -> new RegraNegocioException("Pet não encontrado com o ID: " + id));
         return PetResponseDTO.fromEntity(pet);
     }
+
+    //buscar por nome do pet
+    @Transactional(readOnly = true)
+    public List<PetResponseDTO> buscarPorNome(String nome) {
+        List<Pet> pets = petRepository.findByNomeContaining(nome);
+        return pets.stream()
+                .map(PetResponseDTO::fromEntity)
+                .toList();
+    }
+    
     //atualizar
     //deletar
 
