@@ -67,6 +67,15 @@ public class PetService {
                 .map(PetResponseDTO::fromEntity)
                 .toList();
     }
+
+    //buscar por espécie do pet
+    @Transactional(readOnly = true)
+    public List<PetResponseDTO> buscarPorEspecie(String especie) {
+        List<Pet> pets = petRepository.findByEspecie(especie);
+        return pets.stream()
+                .map(PetResponseDTO::fromEntity)
+                .toList();
+    }
     
     //atualizar
     //deletar
